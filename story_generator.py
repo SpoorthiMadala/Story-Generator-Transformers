@@ -4,7 +4,7 @@ os.environ["TRANSFORMERS_NO_TF"] = "1"  # Disable TensorFlow backend
 from transformers import pipeline, set_seed
 
 # Load model only once
-generator = pipeline('text-generation', model='gpt2')  # You can try other models too
+generator = pipeline('text-generation', model='gpt2-medium')  # You can try other models too
 set_seed(42)
 
 def generate_story(prompt: str, max_length: int = 200) -> str:
