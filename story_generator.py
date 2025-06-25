@@ -5,11 +5,7 @@ model_id = "EleutherAI/gpt-neo-1.3B"
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    torch_dtype=torch.float16,
-    device_map="auto"
-)
+model = AutoModelForCausalLM.from_pretrained(model_id)
 
 def generate_story(prompt, max_tokens=300):
 
