@@ -1,7 +1,7 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_id = "tiiuae/falcon-7b-instruct"
+model_id = "EleutherAI/gpt-neo-1.3B"
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
