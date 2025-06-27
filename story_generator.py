@@ -1,11 +1,15 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 
-model_id = "EleutherAI/gpt-neo-1.3B"
+model_id = "tiiuae/falcon-7b-instruct"
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(
+    model_id,
+    torch_dtype=torch.float16,
+    device_map="auto"
+)
 
 def generate_story(prompt, max_tokens=300):
 
